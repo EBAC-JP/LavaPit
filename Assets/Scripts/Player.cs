@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
 
     [Header("Moviments")]
     [SerializeField] float speed;
+    [SerializeField] Vector2 friction = new Vector2(-.1f, 0);
     [SerializeField] KeyCode leftKey;
     [SerializeField] KeyCode rightKey;
     [Header("Jump")]
@@ -62,6 +63,12 @@ public class Player : MonoBehaviour {
             _myRigid.velocity = new Vector2(speed, _myRigid.velocity.y);
             Flip(1);
         }
+        HandleFriction();
+    }
+
+    void HandleFriction() {
+        if (_myRigid.velocity.x > 0) _myRigid.velocity += friction;
+        else if (_myRigid.velocity.x < 0) _myRigid.velocity -= friction;
     }
 
     void Flip(int scale) {
