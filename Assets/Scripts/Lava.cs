@@ -15,4 +15,9 @@ public class Lava : MonoBehaviour {
     void Update() {
         _myRigid.velocity = Vector2.up * upSpeed;
     }
+
+    void OnBecameInvisible()
+    {
+        Update();
+    }
 }
