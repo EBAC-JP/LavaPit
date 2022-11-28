@@ -23,11 +23,14 @@ public class Player : MonoBehaviour {
     Rigidbody2D _myRigid;
     Animator _myAnim;
     float _distToGround;
+    int _totalCoins = 0;
+    Vector3 _startPosition;
 
     void Start() {
         _myRigid = GetComponent<Rigidbody2D>();
         _myAnim = GetComponent<Animator>();
         _distToGround = GetComponent<Collider2D>().bounds.extents.y;
+        _startPosition = transform.position;
     }
 
     void Update() {
@@ -39,6 +42,18 @@ public class Player : MonoBehaviour {
         _myAnim.SetBool(groundVariable, IsGrounded());
         if (_myRigid.velocity.x != 0) _myAnim.SetBool(runVariable, true);
         else _myAnim.SetBool(runVariable, false);
+    }
+
+    void NextLevel() {
+        GameManager.Instance.NextLevel();
+    }
+
+    void OnTriggerEnter2D(Collider2D collider) {
+        if (collider.CompareTag("Coin")) {
+            Destroy(collider.gameObject);
+            _totalCoins++;
+            Invoke(nameof(NextLevel), .5f);
+        }
     }
 
     #region Jump
@@ -75,4 +90,13 @@ public class Player : MonoBehaviour {
         transform.DOScaleX(scale, .1f);
     }
     #endregion
+
+    public int GetTotalCoins() {
+        return _totalCoins;
+    }
+
+    public void ResetPlayer() {
+        _myRigid.velocity = Vector2.zero;
+        transform.position = _startPosition;
+    }
 }
