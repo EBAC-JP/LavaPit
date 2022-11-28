@@ -1160,6 +1160,16 @@ MonoBehaviour:
   endPiece: {fileID: 7266892976145918389, guid: d4d5c17f566a72c44838eb3f348dc3a4, type: 3}
   pieces:
   - {fileID: 7634498646227871255, guid: 69a86302e6f04244aa4246da131bc80e, type: 3}
+  - {fileID: 7634498646227871255, guid: 7348f65376d699c44bc3b076468f46fa, type: 3}
+  - {fileID: 7634498646227871255, guid: c9ea3246b430d8f459538deb4db98001, type: 3}
+  - {fileID: 7634498646227871255, guid: 1ed313bcced30904483e70df6f5fc267, type: 3}
+  - {fileID: 7634498646227871255, guid: c7e4172c28d6ad04cacefe3c0633045a, type: 3}
+  - {fileID: 7634498646227871255, guid: 3f41b9f6a7addab4ea2a32323fdbd8ad, type: 3}
+  - {fileID: 7634498646227871255, guid: d049e901b2829a847ad052ded3ee8987, type: 3}
+  - {fileID: 7634498646227871255, guid: 32d26633041bb8549bc466bc872b15c7, type: 3}
+  - {fileID: 7634498646227871255, guid: 3f65a98c572484d4cb574079854cb2c6, type: 3}
+  - {fileID: 7634498646227871255, guid: eccaffdc1bba4594284ba74c19c2f6cd, type: 3}
+  - {fileID: 7634498646227871255, guid: 6a61ed0a0bc4d35448a8319a4ff2fbc3, type: 3}
 --- !u!1 &1812186016
 GameObject:
   m_ObjectHideFlags: 0

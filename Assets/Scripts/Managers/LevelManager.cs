@@ -22,7 +22,12 @@ public class LevelManager : Singleton<LevelManager> {
         return _currentIndex;
     }
 
-    public void CleanLevel() {
+    public void ResetLevel() {
+        CleanLevel();
+        _currentIndex = 1;
+    }
+
+    void CleanLevel() {
         foreach (var piece in _spawnedPieces) {
             Destroy(piece);
         }

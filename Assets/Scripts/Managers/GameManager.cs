@@ -35,7 +35,7 @@ public class GameManager : Singleton<GameManager> {
     }
 
     public void EndGame() {
-        LevelManager.Instance.CleanLevel();
+        LevelManager.Instance.ResetLevel();
         coinText.text = "Moedas : " + _currentPlayer.GetTotalCoins().ToString();
         Destroy(_currentPlayer.gameObject);
         Destroy(_currentLava.gameObject);
