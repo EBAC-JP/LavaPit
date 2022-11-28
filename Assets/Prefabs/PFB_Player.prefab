@@ -145,6 +145,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50686a165ee0611418de8200669274a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SFXs:
+  - {fileID: 8300000, guid: 9201e1110d735ad479bc2ed889f8c657, type: 3}
+  - {fileID: 8300000, guid: 91a304ad16ff69d4b937611dc24930d7, type: 3}
   speed: 5
   friction: {x: -0.1, y: 0}
   leftKey: 97

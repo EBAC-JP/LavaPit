@@ -6,6 +6,7 @@ using NaughtyAttributes;
 
 public class Player : MonoBehaviour {
 
+    [SerializeField] List<AudioClip> SFXs;
     [Header("Moviments")]
     [SerializeField] float speed;
     [SerializeField] Vector2 friction = new Vector2(-.1f, 0);
@@ -52,7 +53,8 @@ public class Player : MonoBehaviour {
         if (collider.CompareTag("Coin")) {
             Destroy(collider.gameObject);
             _totalCoins++;
-            Invoke(nameof(NextLevel), .5f);
+            AudioSource.PlayClipAtPoint(SFXs[1], transform.position);
+            Invoke(nameof(NextLevel), .2f);
         }
     }
 
@@ -61,10 +63,10 @@ public class Player : MonoBehaviour {
         return Physics2D.Raycast(transform.position, -Vector2.up, _distToGround + spaceToJump);
     }
 
-    [Button]
     void Jump() {
         _myRigid.velocity = Vector2.up * jumpForce;
         _myAnim.SetTrigger(jumpTrigger);
+        AudioSource.PlayClipAtPoint(SFXs[0], transform.position);
     }
     #endregion
 
